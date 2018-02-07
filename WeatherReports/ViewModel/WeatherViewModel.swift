@@ -25,9 +25,9 @@ class WeatherViewModel {
         self.date = date
     }
     
-    func fetchWeatherInfos(_ urlString: String, completionHandler: @escaping (_ firstAlbum: [WeatherViewModel], _ error: Error?) -> Void) {
+    func fetchWeatherInfos(_ urlString: String, completionHandler: @escaping (_ reports: [Report], _ error: Error?) -> Void) {
         var weatherViewModels: [WeatherViewModel] = []
-        
+        var reports: [Report] = []
         weatherAPI.fetchWeather(urlString, withCompletion: { [weak self] (result) in
             switch result {
             case.success (let fetchResult):
@@ -40,22 +40,22 @@ class WeatherViewModel {
                     let viewModel = WeatherViewModel(timeStamp: self?.timeStamp, rainPossible: self?.rainPossible, temperature: self?.temperature, date: self?.date)
                     
                     
-                    // If i save the result dirtely into presistence. maybe i don't need viewModel?
-                    // and pass [Report] into completionHandler to viewController ?
+                    // If i save the result dirtely into presistence.
+                    // and pass [Report] into completionHandler to viewController in stand of [ViewModel]?
                     
                     let report = Report(context: PersistenceService.context)
                     report.timeStamp = self?.timeStamp
                     report.temperature = (self?.temperature)!
+                    report.rainPossible = weatherInfo.value.rain!
                     PersistenceService.saveContext()
                     
-                    // use Report object
-                    
+                    reports.append(report)
                     weatherViewModels.append(viewModel)
                 }
                 weatherViewModels = weatherViewModels.sorted(by: {
                     $0.date?.compare($1.date!) == .orderedAscending
                 })
-                completionHandler(weatherViewModels, nil)
+                completionHandler(reports, nil)
             case.failure(let error):
                 completionHandler([], error?.localizedDescription as? Error)
             }

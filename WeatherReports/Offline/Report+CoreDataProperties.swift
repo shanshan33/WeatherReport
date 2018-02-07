@@ -17,7 +17,8 @@ extension Report {
         return NSFetchRequest<Report>(entityName: "Report")
     }
 
-    @NSManaged public var timeStamp: String?
     @NSManaged public var temperature: Double
+    @NSManaged public var timeStamp: String?
+    @NSManaged public var rainPossible: Double
 
 }

@@ -21,14 +21,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        weatherViewModel.fetchWeatherInfos("https://www.infoclimat.fr/public-api/gfs/json?_ll=48.8566,2.3522&_auth=U0kEE1UrByVXelptUyVVfANrADVdKwgvBXkLaABlBXgHbARlBmZRN1E%2FVCkGKQYwWXRVNgoxAjIDaFEpXS9TMlM5BGhVPgdgVzhaP1N8VX4DLQBhXX0ILwVuC20AcwVgB2MEfgZgUTVRIFQ0BjUGMVl1VSoKNAI%2FA2FRMV03UzBTMQRmVTIHYlcnWidTZlUwAzcAZl1mCGEFZgs6AGsFbgc2BGUGYlEzUSBUPgY2BjVZblU3Cj0COQNgUSldL1NJU0MEfVV2BydXbVp%2BU35VNANuADQ%3D&_c=c0e8963a1462ec64214942bf624a8d15") { (weatherViewModels, error) in
-            self.weatherViewModels = weatherViewModels
+        weatherViewModel.fetchWeatherInfos("https://www.infoclimat.fr/public-api/gfs/json?_ll=48.8566,2.3522&_auth=U0kEE1UrByVXelptUyVVfANrADVdKwgvBXkLaABlBXgHbARlBmZRN1E%2FVCkGKQYwWXRVNgoxAjIDaFEpXS9TMlM5BGhVPgdgVzhaP1N8VX4DLQBhXX0ILwVuC20AcwVgB2MEfgZgUTVRIFQ0BjUGMVl1VSoKNAI%2FA2FRMV03UzBTMQRmVTIHYlcnWidTZlUwAzcAZl1mCGEFZgs6AGsFbgc2BGUGYlEzUSBUPgY2BjVZblU3Cj0COQNgUSldL1NJU0MEfVV2BydXbVp%2BU35VNANuADQ%3D&_c=c0e8963a1462ec64214942bf624a8d15") { (weatherReports, error) in
+            self.weatherReport = weatherReports
             DispatchQueue.main.async {
                 self.weatherListTableView.reloadData()
             }
         }
         
-        // fetch core date if no network
         let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
         do {
            let weatherList = try PersistenceService.context.fetch(fetchRequest)
@@ -45,13 +44,13 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return weatherReport.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
-        if  self.weatherViewModels.count > 0 {
-            cell.textLabel?.text = self.weatherViewModels[indexPath.row].timeStamp
+        if  self.weatherReport.count > 0 {
+            cell.textLabel?.text = self.weatherReport[indexPath.row].timeStamp
         }
         return cell
     }
