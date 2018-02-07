@@ -27,12 +27,6 @@ class ViewController: UIViewController {
                 self.weatherListTableView.reloadData()
             }
         }
-        
-        let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
-        do {
-           let weatherList = try PersistenceService.context.fetch(fetchRequest)
-            self.weatherReport = weatherList
-        } catch { }
     }
 }
 

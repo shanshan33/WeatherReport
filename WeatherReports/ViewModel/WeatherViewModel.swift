@@ -8,58 +8,73 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class WeatherViewModel {
     
     let weatherAPI = WeatherAPI()
-    var timeStamp: String?
-    var date: Date?
-    var rainPossible: String?
-    var temperature: Double?
-    
-    convenience init(timeStamp: String?, rainPossible: String?, temperature: Double?, date: Date?) {
-        self.init()
-        self.timeStamp = timeStamp
-        self.rainPossible = rainPossible
-        self.temperature = temperature
-        self.date = date
-    }
     
     func fetchWeatherInfos(_ urlString: String, completionHandler: @escaping (_ reports: [Report], _ error: Error?) -> Void) {
-        var weatherViewModels: [WeatherViewModel] = []
         var reports: [Report] = []
-        weatherAPI.fetchWeather(urlString, withCompletion: { [weak self] (result) in
+        weatherAPI.fetchWeather(urlString, withCompletion: { [weak self] (result, error) in
             switch result {
-            case.success (let fetchResult):
+            case.success (let fetchResult)?:
                 guard let weatherInfos = fetchResult.data else { return }
-                for weatherInfo in weatherInfos {
-                    self?.date = self?.stringToDate(string: weatherInfo.key)
-                    self?.timeStamp = self?.formateDateString(string: weatherInfo.key)
-                    self?.rainPossible = self?.rainPossibleText(num: weatherInfo.value.rain!)
-                    self?.temperature = weatherInfo.value.temperature?.value
-                    let viewModel = WeatherViewModel(timeStamp: self?.timeStamp, rainPossible: self?.rainPossible, temperature: self?.temperature, date: self?.date)
-                    
-                    
-                    // If i save the result dirtely into presistence.
-                    // and pass [Report] into completionHandler to viewController in stand of [ViewModel]?
-                    
-                    let report = Report(context: PersistenceService.context)
-                    report.timeStamp = self?.timeStamp
-                    report.temperature = (self?.temperature)!
-                    report.rainPossible = weatherInfo.value.rain!
-                    PersistenceService.saveContext()
-                    
-                    reports.append(report)
-                    weatherViewModels.append(viewModel)
+                if (self?.existedReport().isEmpty == false) {
+                    self?.deleteExsitReport()
                 }
-                weatherViewModels = weatherViewModels.sorted(by: {
-                    $0.date?.compare($1.date!) == .orderedAscending
+                for weatherInfo in weatherInfos {
+                    let report = Report(context: PersistenceService.context)
+                    report.timeStamp = self?.formateDateString(string: weatherInfo.key)
+                    report.date = self?.stringToDate(string: weatherInfo.key) as NSDate?
+                    
+                    if let temp = weatherInfo.value.temperature?.value,
+                        let rain = weatherInfo.value.rain,
+                        let humidity = weatherInfo.value.humidity?.value,
+                        let snowrick = weatherInfo.value.snowrisk {
+                        report.temperature = temp
+                        report.rainPossible = self?.rainPossibleText(num: rain)
+                        report.humidity = humidity
+                        report.snowrisk = snowrick
+                    }
+
+                    PersistenceService.saveContext()
+                    reports.append(report)
+                }
+                reports = reports.sorted(by: {
+                    $0.date?.compare($1.date! as Date) == .orderedAscending
                 })
                 completionHandler(reports, nil)
-            case.failure(let error):
-                completionHandler([], error?.localizedDescription as? Error)
+            case.failure(let error)?:
+                let offlineReport = self?.existedReport()
+                completionHandler(offlineReport!, error?.localizedDescription as? Error)
+            case .none:
+                break
             }
         })
+    }
+    
+    func existedReport() -> [Report] {
+        var existReport: [Report] = []
+        let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
+        do {
+            existReport = try PersistenceService.context.fetch(fetchRequest) as [Report]
+        } catch {
+            print("fetch persistence data failed")
+        }
+        existReport = existReport.sorted(by: {
+            $0.date?.compare($1.date! as Date) == .orderedAscending
+        })
+        return existReport
+    }
+    
+    func deleteExsitReport() {
+        let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
+        if let result = try? PersistenceService.context.fetch(fetchRequest) {
+            for record in result {
+                PersistenceService.context.delete(record)
+            }
+        }
     }
 
     private func formateDateString(string: String) -> String? {
@@ -76,7 +91,7 @@ class WeatherViewModel {
         return dateFormatter.date(from: string)!
     }
     
-    private func rainPossibleText(num: Double) -> String? {
+    private func rainPossibleText(num: Double) -> String {
         if num == 0.0 {
             return "Pas de pluie"
         } else {

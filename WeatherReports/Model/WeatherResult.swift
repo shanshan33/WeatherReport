@@ -14,7 +14,7 @@ public struct WeatherResult {
 }
 
 extension WeatherResult {
-    init(request_key: String?, data: [String: Weather]? = nil ) {
+    init(request_key: String?, data: [String: Weather]?) {
         self.data = data
         self.request_key = request_key
     }

@@ -9,13 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherReports/ViewModel/WeatherViewModel.swift"
-            timestampString = "539715572.727598"
+            filePath = "WeatherReports/Model/Temperature.swift"
+            timestampString = "539722628.019056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "fetchWeatherInfos(_:completionHandler:)"
+            startingLineNumber = "2"
+            endingLineNumber = "2"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherReports/ViewController.swift"
+            timestampString = "539739729.7512209"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherReports/ViewModel/WeatherViewModel.swift"
-            timestampString = "539715572.727984"
+            timestampString = "539739729.75129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "fetchWeatherInfos(_:completionHandler:)"
             landmarkType = "7">
             <Locations>
@@ -38,31 +54,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (WeatherReports.Result&lt;WeatherReports.WeatherResult&gt;) -&gt; () in WeatherReports.WeatherViewModel.fetchWeatherInfos(Swift.String, completionHandler: (Swift.Array&lt;WeatherReports.Report&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;WeatherReports.Result&lt;WeatherReports.WeatherResult&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in WeatherReports.WeatherViewModel.fetchWeatherInfos(Swift.String, completionHandler: (Swift.Array&lt;WeatherReports.Report&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "WeatherReports"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shanshan.zhao/Documents/WeatherReports/WeatherReports/ViewModel/WeatherViewModel.swift"
-                  timestampString = "539715421.935577"
+                  timestampString = "539739420.099373"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "6999">
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "6032">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (WeatherReports.Result&lt;WeatherReports.WeatherResult&gt;) -&gt; () in WeatherReports.WeatherViewModel.fetchWeatherInfos(Swift.String, completionHandler: (Swift.Array&lt;WeatherReports.Report&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;WeatherReports.Result&lt;WeatherReports.WeatherResult&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in WeatherReports.WeatherViewModel.fetchWeatherInfos(Swift.String, completionHandler: (Swift.Array&lt;WeatherReports.Report&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "WeatherReports"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/shanshan.zhao/Documents/WeatherReports/WeatherReports/ViewModel/WeatherViewModel.swift"
-                  timestampString = "539715421.939365"
+                  timestampString = "539739420.103428"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "7130">
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "6163">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -74,13 +90,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherReports/ViewController.swift"
-            timestampString = "539715572.728169"
+            timestampString = "539739729.751606"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeatherReports.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "WeatherReports"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shanshan.zhao/Documents/WeatherReports/WeatherReports/ViewController.swift"
+                  timestampString = "539739420.114318"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;WeatherReports.Report&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in WeatherReports.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "WeatherReports"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shanshan.zhao/Documents/WeatherReports/WeatherReports/ViewController.swift"
+                  timestampString = "539739420.116181"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -89,13 +137,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherReports/ViewController.swift"
-            timestampString = "539715572.728397"
+            filePath = "WeatherReports/ViewModel/WeatherViewModel.swift"
+            timestampString = "539739729.751659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "fetchWeatherInfos(_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -105,13 +153,77 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherReports/ViewController.swift"
-            timestampString = "539715572.7285759"
+            filePath = "WeatherReports/API/BaseAPI.swift"
+            timestampString = "539729969.350531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "request(urlString:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherReports/API/BaseAPI.swift"
+            timestampString = "539729969.3514251"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "request(urlString:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherReports/API/WeatherAPI.swift"
+            timestampString = "539739729.751923"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "fetchWeather(_:withCompletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherReports/ViewModel/WeatherViewModel.swift"
+            timestampString = "539739729.7519751"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "deleteExsitReport()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherReports/ViewModel/WeatherViewModel.swift"
+            timestampString = "539739729.75217"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "fetchWeatherInfos(_:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
