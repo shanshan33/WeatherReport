@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
  
@@ -16,7 +17,7 @@ class ViewController: UIViewController {
     var weatherViewModel = WeatherViewModel()
     var weatherViewModels: [WeatherViewModel] = []
     
-    
+    var weatherReport = [Report]()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,6 +27,13 @@ class ViewController: UIViewController {
                 self.weatherListTableView.reloadData()
             }
         }
+        
+        // fetch core date if no network
+        let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
+        do {
+           let weatherList = try PersistenceService.context.fetch(fetchRequest)
+            self.weatherReport = weatherList
+        } catch { }
     }
 }
 

@@ -38,6 +38,18 @@ class WeatherViewModel {
                     self?.rainPossible = self?.rainPossibleText(num: weatherInfo.value.rain!)
                     self?.temperature = weatherInfo.value.temperature?.value
                     let viewModel = WeatherViewModel(timeStamp: self?.timeStamp, rainPossible: self?.rainPossible, temperature: self?.temperature, date: self?.date)
+                    
+                    
+                    // If i save the result dirtely into presistence. maybe i don't need viewModel?
+                    // and pass [Report] into completionHandler to viewController ?
+                    
+                    let report = Report(context: PersistenceService.context)
+                    report.timeStamp = self?.timeStamp
+                    report.temperature = (self?.temperature)!
+                    PersistenceService.saveContext()
+                    
+                    // use Report object
+                    
                     weatherViewModels.append(viewModel)
                 }
                 weatherViewModels = weatherViewModels.sorted(by: {
