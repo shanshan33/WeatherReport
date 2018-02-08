@@ -82,6 +82,7 @@ class WeatherViewModel {
 
     private func formateDateString(string: String) -> String? {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let date = dateFormatter.date(from: string) //according to date format your date string
         dateFormatter.dateFormat = "EEEE, MMM d "
@@ -90,6 +91,7 @@ class WeatherViewModel {
     
     private func stringToDate(string: String) -> Date {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return dateFormatter.date(from: string)!
     }
