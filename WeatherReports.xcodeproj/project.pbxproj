@@ -146,10 +146,10 @@
 				F3A9D61C202A76AC00997BED /* Offline */,
 				F3A9D609202A707000997BED /* API */,
 				F3A9D5D8202A6F3900997BED /* Main.storyboard */,
+				F344F6AE202C9B5B00689FF0 /* Constants.swift */,
 				F3A9D5DE202A6F3900997BED /* Assets.xcassets */,
 				F3A9D5E0202A6F3900997BED /* LaunchScreen.storyboard */,
 				F3A9D5E3202A6F3900997BED /* Info.plist */,
-				F344F6AE202C9B5B00689FF0 /* Constants.swift */,
 			);
 			path = WeatherReports;
 			sourceTree = "<group>";

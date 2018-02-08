@@ -21,10 +21,18 @@ class WeatherDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.layer.contents = UIImage(named: "background")?.cgImage
+        setNavigationBarAppearence()
         self.navigationController?.navigationBar.isHidden = false
         setupReportDetail(viewModel:viewModel)
     }
 
+    
+    private func setNavigationBarAppearence() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
