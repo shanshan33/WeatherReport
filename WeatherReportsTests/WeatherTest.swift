@@ -22,77 +22,54 @@ class WeatherTest: XCTestCase {
     }
     
     func testBasicParsing() {
-        
         let json = """
-{ "cape": 0, "humidite":{ "2m":
-77.1
-},
-"iso_zero":
-0,
-"nebulosite":
 {
-"basse":
-0,
-"haute":
-55,
-"moyenne":
-0,
-"totale":
-55
-},
-"pluie":
-0,
-"pluie_convective":
-0,
-"pression":
-{
-"niveau_de_la_mer":
-102100
-},
-"risque_neige":
-"non",
-"temperature":
-{
-"2m":
-267,
-"500hPa":
--0.1,
-"850hPa":
--0.1,
-"sol":
-269.8
-},
-"vent_direction":
-{
-"10m":
-344
-},
-"vent_moyen":
-{
-"10m":
-5.4
-},
-"vent_rafales":
-{
-"10m":
-7.1
+  "vent_rafales" : {
+    "10m" : 7.0999999999999996
+  },
+  "pression" : {
+    "niveau_de_la_mer" : 102100
+  },
+  "pluie" : 0,
+  "risque_neige" : "non",
+  "vent_moyen" : {
+    "10m" : 5.4000000000000004
+  },
+  "nebulosite" : {
+    "totale" : 55,
+    "haute" : 55,
+    "basse" : 0,
+    "moyenne" : 0
+  },
+  "pluie_convective" : 0,
+  "vent_direction" : {
+    "10m" : 344
+  },
+  "iso_zero" : 0,
+  "temperature" : {
+    "sol" : 269.80000000000001,
+    "2m" : 267,
+    "500hPa" : -0.10000000000000001,
+    "850hPa" : -0.10000000000000001
+  },
+  "humidite" : {
+    "2m" : 77.099999999999994
+  },
+  "cape" : 0
 }
-}
-
 """
-        
         let weatherJSONString = json.data(using: .utf8)!
         let jsonObjects = try! JSONSerialization.jsonObject(with: weatherJSONString) as! JSON
-        // This is amazing to change super long ugly json into pretty string lool
-        let data = try! JSONSerialization.data(withJSONObject: jsonObjects, options: .prettyPrinted)
-        let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-        print(string)
+        //        Just figure out this amazing way to avoir full screen json, make it into prettier way 😂
+        //        let data = try! JSONSerialization.data(withJSONObject: jsonObjects, options: .prettyPrinted)
+        //        let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+        //        print(string)
         
-
-        //JSONSerialization.jsonObject(with: weatherJSONString) as! JSON
- //       let weather = try? Weather(with: jsonObjects)
- //       XCTAssertNotNil(weather)
- //       XCTAssertEqual(name, weather?.name)
+        let weather = try? Weather(with: jsonObjects)
+        XCTAssertNotNil(weather)
+        XCTAssertEqual("non", weather?.snowrisk)
+        XCTAssertEqual(77.099999999999994, weather?.humidity?.value)
+        XCTAssertEqual(267, weather?.temperature?.value)
     }
-
+    
 }
