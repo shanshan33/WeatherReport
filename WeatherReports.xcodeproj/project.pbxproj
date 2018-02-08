@@ -106,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F344F6B8202CC33300689FF0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F330B751202BD182001A00DA /* WeatherBasicCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		F35CA966202C7881004BE6AD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,13 +146,13 @@
 		F3A9D5D3202A6F3900997BED /* WeatherReports */ = {
 			isa = PBXGroup;
 			children = (
-				F35CA966202C7881004BE6AD /* ViewController */,
 				F3A9D5D4202A6F3900997BED /* AppDelegate.swift */,
-				F330B751202BD182001A00DA /* WeatherBasicCell.swift */,
-				F3A9D615202A714C00997BED /* ViewModel */,
+				F344F6B8202CC33300689FF0 /* Cell */,
+				F35CA966202C7881004BE6AD /* ViewController */,
 				F3A9D614202A713900997BED /* Model */,
 				F3A9D61C202A76AC00997BED /* Offline */,
 				F3A9D609202A707000997BED /* API */,
+				F3A9D615202A714C00997BED /* ViewModel */,
 				F3A9D5D8202A6F3900997BED /* Main.storyboard */,
 				F344F6AE202C9B5B00689FF0 /* Constants.swift */,
 				F3A9D5DE202A6F3900997BED /* Assets.xcassets */,

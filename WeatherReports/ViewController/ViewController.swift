@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         self.view.layer.contents = UIImage(named: "background")?.cgImage
         self.weatherListTableView.layer.cornerRadius = 20
         fetchWeatherListOfParis()
+        self.navigationItem.title = ""
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -29,7 +29,6 @@ class WeatherAPI {
                 guard let data = data else {
                     throw JSONError.NoData
                 }
-
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON {
                     guard let results = try? WeatherResult.init(with: json) else {
                         throw JSONError.ConversionFailed

@@ -29,7 +29,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <tableView clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WLV-nd-97a">
-                                <rect key="frame" x="0.0" y="208" width="375" height="459"/>
+                                <rect key="frame" x="0.0" y="328" width="375" height="339"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherBasicCell" rowHeight="70" id="Y9A-Yd-Hki" customClass="WeatherBasicCell" customModule="WeatherReports" customModuleProvider="target">
@@ -92,17 +92,17 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tbv-bv-fOD">
-                                <rect key="frame" x="10" y="9" width="355" height="180"/>
+                                <rect key="frame" x="10" y="9" width="355" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QV7-80-eYu">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="NOn-tC-T7o"/>
+                                            <constraint firstAttribute="height" constant="50" id="NOn-tC-T7o"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOl-VT-uUd">
-                                        <rect key="frame" x="0.0" y="30" width="355" height="100"/>
+                                        <rect key="frame" x="0.0" y="50" width="355" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="ByT-4v-Nd8"/>
                                         </constraints>
@@ -111,7 +111,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5n-ts-LJf">
-                                        <rect key="frame" x="0.0" y="130" width="355" height="50"/>
+                                        <rect key="frame" x="0.0" y="150" width="355" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1am-Wz-9Lr"/>
                                         </constraints>
@@ -119,6 +119,13 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHh-s8-JyC">
+                                        <rect key="frame" x="0.0" y="200" width="355" height="100"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="FG2-3I-7jU"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -128,12 +135,12 @@
                             <constraint firstItem="tbv-bv-fOD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="9" id="9lZ-7l-JQ6"/>
                             <constraint firstItem="oEc-zk-hSb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="K54-wn-V88"/>
                             <constraint firstItem="oEc-zk-hSb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NnQ-JJ-17w"/>
-                            <constraint firstItem="WLV-nd-97a" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="TvC-1l-yKO"/>
+                            <constraint firstItem="WLV-nd-97a" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="TvC-1l-yKO"/>
                             <constraint firstItem="WLV-nd-97a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="U14-AA-gn6"/>
                             <constraint firstItem="tbv-bv-fOD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="WKL-dI-Ddu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tbv-bv-fOD" secondAttribute="trailing" constant="10" id="YQZ-jS-Kyw"/>
-                            <constraint firstItem="oEc-zk-hSb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="l0l-Zk-R3l"/>
-                            <constraint firstItem="oEc-zk-hSb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ncb-qP-isD"/>
+                            <constraint firstItem="oEc-zk-hSb" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="l0l-Zk-R3l"/>
+                            <constraint firstItem="oEc-zk-hSb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-64" id="ncb-qP-isD"/>
                             <constraint firstItem="WLV-nd-97a" firstAttribute="top" secondItem="tbv-bv-fOD" secondAttribute="bottom" constant="19" id="yQH-LZ-hd4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -236,7 +243,7 @@
                             <constraint firstAttribute="trailing" secondItem="Th1-VP-37j" secondAttribute="trailing" id="DsU-vp-o1i"/>
                             <constraint firstItem="h4b-Zn-4JA" firstAttribute="top" secondItem="Bui-L7-KDF" secondAttribute="top" id="Lm5-rZ-too"/>
                             <constraint firstItem="Th1-VP-37j" firstAttribute="leading" secondItem="Bui-L7-KDF" secondAttribute="leading" id="Vp8-bR-oMf"/>
-                            <constraint firstItem="h4b-Zn-4JA" firstAttribute="bottom" secondItem="9lm-AU-4eK" secondAttribute="bottom" id="hAb-wM-Wcp"/>
+                            <constraint firstItem="h4b-Zn-4JA" firstAttribute="bottom" secondItem="Bui-L7-KDF" secondAttribute="bottom" id="hAb-wM-Wcp"/>
                             <constraint firstItem="h4b-Zn-4JA" firstAttribute="leading" secondItem="9lm-AU-4eK" secondAttribute="leading" id="x6t-y6-ayE"/>
                             <constraint firstItem="Th1-VP-37j" firstAttribute="top" secondItem="9lm-AU-4eK" secondAttribute="top" constant="20" id="yca-kt-kNE"/>
                         </constraints>
@@ -262,6 +269,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mIL-2K-uPM">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
