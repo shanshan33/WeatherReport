@@ -86,7 +86,7 @@ class WeatherViewModel {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let date = dateFormatter.date(from: string) //according to date format your date string
-        dateFormatter.dateFormat = "EEEE, MMM d, h a"
+        dateFormatter.dateFormat = "EEEE, MMM d "
         return dateFormatter.string(from: date!)
     }
     

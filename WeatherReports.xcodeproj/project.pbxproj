@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F330B752202BD182001A00DA /* WeatherBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F330B751202BD182001A00DA /* WeatherBasicCell.swift */; };
 		F33BE758202BCD5E0027F603 /* Report+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33BE756202BCD5E0027F603 /* Report+CoreDataClass.swift */; };
 		F33BE759202BCD5E0027F603 /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33BE757202BCD5E0027F603 /* Report+CoreDataProperties.swift */; };
 		F3A9D5D5202A6F3900997BED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A9D5D4202A6F3900997BED /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F330B751202BD182001A00DA /* WeatherBasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBasicCell.swift; sourceTree = "<group>"; };
 		F33BE756202BCD5E0027F603 /* Report+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F33BE757202BCD5E0027F603 /* Report+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F3A9D5D1202A6F3900997BED /* WeatherReports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherReports.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 			children = (
 				F3A9D5D4202A6F3900997BED /* AppDelegate.swift */,
 				F3A9D5D6202A6F3900997BED /* ViewController.swift */,
+				F330B751202BD182001A00DA /* WeatherBasicCell.swift */,
 				F3A9D615202A714C00997BED /* ViewModel */,
 				F3A9D614202A713900997BED /* Model */,
 				F3A9D61C202A76AC00997BED /* Offline */,
@@ -337,6 +340,7 @@
 				F3A9D60B202A70BF00997BED /* JsonProtocol.swift in Sources */,
 				F3A9D5DD202A6F3900997BED /* WeatherReports.xcdatamodeld in Sources */,
 				F33BE758202BCD5E0027F603 /* Report+CoreDataClass.swift in Sources */,
+				F330B752202BD182001A00DA /* WeatherBasicCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -43,16 +43,21 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weatherReport.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
-        if  self.weatherReport.count > 0 {
-            cell.textLabel?.text = self.weatherReport[indexPath.row].timeStamp
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherBasicCell", for: indexPath) as? WeatherBasicCell
+ 
+        if self.weatherReport.count > 0 {
+            cell?.configCell(report: self.weatherReport[indexPath.row])
         }
-        return cell
+        return cell!
     }
 }
 
