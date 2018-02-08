@@ -32,7 +32,7 @@ class WeatherViewModel {
                         let rain = weatherInfo.value.rain,
                         let humidity = weatherInfo.value.humidity?.value,
                         let snowrick = weatherInfo.value.snowrisk {
-                        report.temperature = temp
+                        report.temperature = self?.tempToCelsius(kelvin: temp)
                         report.rainPossible = self?.rainPossibleText(num: rain)
                         report.humidity = humidity
                         report.snowrisk = snowrick
@@ -75,6 +75,11 @@ class WeatherViewModel {
                 PersistenceService.context.delete(record)
             }
         }
+    }
+    
+    private func tempToCelsius(kelvin: Double) -> String {
+        let celsius = kelvin - 273.16
+        return String(format: "%.0f°", celsius)
     }
 
     private func formateDateString(string: String) -> String? {

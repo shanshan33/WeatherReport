@@ -18,21 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOl-VT-uUd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="ByT-4v-Nd8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WLV-nd-97a">
-                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                            <tableView clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WLV-nd-97a">
+                                <rect key="frame" x="0.0" y="208" width="375" height="459"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="567" id="gnC-ET-anw"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Y9A-Yd-Hki">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -48,25 +36,58 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="uVm-g9-Idr"/>
                                 </connections>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tbv-bv-fOD">
+                                <rect key="frame" x="10" y="9" width="355" height="180"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QV7-80-eYu">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="NOn-tC-T7o"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOl-VT-uUd">
+                                        <rect key="frame" x="0.0" y="30" width="355" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="ByT-4v-Nd8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5n-ts-LJf">
+                                        <rect key="frame" x="0.0" y="130" width="355" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="1am-Wz-9Lr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="WLV-nd-97a" firstAttribute="trailing" secondItem="WOl-VT-uUd" secondAttribute="trailing" id="56o-Hy-oSv"/>
-                            <constraint firstItem="WLV-nd-97a" firstAttribute="top" secondItem="WOl-VT-uUd" secondAttribute="bottom" id="BDA-cJ-0CY"/>
-                            <constraint firstAttribute="trailing" secondItem="WLV-nd-97a" secondAttribute="trailing" id="IBv-Wk-5LZ"/>
-                            <constraint firstItem="WLV-nd-97a" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aza-w5-Xze"/>
-                            <constraint firstItem="WLV-nd-97a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dGh-1I-A4a"/>
-                            <constraint firstItem="WLV-nd-97a" firstAttribute="leading" secondItem="WOl-VT-uUd" secondAttribute="leading" id="qYQ-pq-Ztq"/>
+                            <constraint firstItem="WLV-nd-97a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4YK-KT-q60"/>
+                            <constraint firstItem="tbv-bv-fOD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="9" id="9lZ-7l-JQ6"/>
+                            <constraint firstItem="WLV-nd-97a" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="TvC-1l-yKO"/>
+                            <constraint firstItem="WLV-nd-97a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="U14-AA-gn6"/>
+                            <constraint firstItem="tbv-bv-fOD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="WKL-dI-Ddu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tbv-bv-fOD" secondAttribute="trailing" constant="10" id="YQZ-jS-Kyw"/>
+                            <constraint firstItem="WLV-nd-97a" firstAttribute="top" secondItem="tbv-bv-fOD" secondAttribute="bottom" constant="19" id="yQH-LZ-hd4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="locationLabel" destination="WOl-VT-uUd" id="BBi-lP-I6p"/>
+                        <outlet property="todayTempertureLabel" destination="r5n-ts-LJf" id="q8h-5F-Nn9"/>
                         <outlet property="weatherListTableView" destination="WLV-nd-97a" id="paT-8i-QDS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="60.719640179910051"/>
         </scene>
     </scenes>
 </document>
