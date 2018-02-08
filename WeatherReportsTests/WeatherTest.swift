@@ -72,4 +72,12 @@ class WeatherTest: XCTestCase {
         XCTAssertEqual(267, weather?.temperature?.value)
     }
     
+    func test_init_method() {
+        let temperature = Temperature(value: 267, sol: 267)
+        let humidity = Humidity(value: 77)
+        let weather = Weather(rain: 0, temperature: temperature , humidity: humidity, snowrisk: "non")
+        XCTAssertNotNil(weather)
+        XCTAssertEqual(weather.humidity?.value, 77)
+        XCTAssertEqual(weather.snowrisk,"non")
+    }
 }
