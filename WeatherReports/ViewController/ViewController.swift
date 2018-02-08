@@ -25,6 +25,11 @@ class ViewController: UIViewController {
         fetchWeatherListOfParis()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     func fetchWeatherListOfParis() {
         weatherViewModel.fetchWeatherInfos("https://www.infoclimat.fr/public-api/gfs/json?_ll=48.8566,2.3522&_auth=U0kEE1UrByVXelptUyVVfANrADVdKwgvBXkLaABlBXgHbARlBmZRN1E%2FVCkGKQYwWXRVNgoxAjIDaFEpXS9TMlM5BGhVPgdgVzhaP1N8VX4DLQBhXX0ILwVuC20AcwVgB2MEfgZgUTVRIFQ0BjUGMVl1VSoKNAI%2FA2FRMV03UzBTMQRmVTIHYlcnWidTZlUwAzcAZl1mCGEFZgs6AGsFbgc2BGUGYlEzUSBUPgY2BjVZblU3Cj0COQNgUSldL1NJU0MEfVV2BydXbVp%2BU35VNANuADQ%3D&_c=c0e8963a1462ec64214942bf624a8d15") { (weatherReports, error) in
             self.weatherReport = weatherReports
@@ -38,6 +43,12 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let weatherDetail = storyboard.instantiateViewController(withIdentifier: "WeatherDetailsViewController") as? WeatherDetailsViewController {
+            let report = self.weatherReport[indexPath.row]
+            weatherDetail.viewModel = WeatherDetailsViewModel(humidity: report.humidity, rainPossible: report.rainPossible, snowrisk: report.snowrisk, temperature: report.temperature)
+            self.navigationController?.pushViewController(weatherDetail, animated: true)
+        }
     }
 }
 
