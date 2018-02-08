@@ -18,7 +18,7 @@ class WeatherViewModel {
         var reports: [Report] = []
         weatherAPI.fetchWeather(urlString, withCompletion: { [weak self] (result, error) in
             switch result {
-            case.success (let fetchResult)?:
+            case.success (let fetchResult):
                 guard let weatherInfos = fetchResult.data else { return }
                 if (self?.existedReport().isEmpty == false) {
                     self?.deleteExsitReport()
@@ -45,11 +45,9 @@ class WeatherViewModel {
                     $0.date?.compare($1.date! as Date) == .orderedAscending
                 })
                 completionHandler(reports, nil)
-            case.failure(let error)?:
-                let offlineReport = self?.existedReport()
-                completionHandler(offlineReport!, error?.localizedDescription as? Error)
-            case .none:
-                break
+            case.failure(let error):
+                guard let offlineReport = self?.existedReport() else { return }
+                completionHandler(offlineReport, error?.localizedDescription as? Error)
             }
         })
     }

@@ -19,7 +19,7 @@ enum JSONError: Error {
 }
 
 class WeatherAPI {
-    func fetchWeather(_ urlString: String, withCompletion completion: ((Result<WeatherResult>?, Error?) -> Void)?) {
+    func fetchWeather(_ urlString: String, withCompletion completion: ((Result<WeatherResult>, Error?) -> Void)?) {
         
         guard let requestUrl = URL(string:urlString) else { return }
         let request = URLRequest(url:requestUrl)
