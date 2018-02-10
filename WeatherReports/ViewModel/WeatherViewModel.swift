@@ -84,16 +84,20 @@ class WeatherViewModel {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let date = dateFormatter.date(from: string) //according to date format your date string
+        guard let date = dateFormatter.date(from: string) else { return nil }
         dateFormatter.dateFormat = "EEEE, MMM d "
-        return dateFormatter.string(from: date!)
+        return dateFormatter.string(from: date)
     }
     
     private func stringToDate(string: String) -> Date {
+        var date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return dateFormatter.date(from: string)!
+        if let newDate = dateFormatter.date(from: string) {
+            date = newDate
+        }
+        return date
     }
     
     private func rainPossibleText(num: Double) -> String {
