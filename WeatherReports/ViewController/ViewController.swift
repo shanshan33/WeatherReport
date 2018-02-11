@@ -33,7 +33,8 @@ class ViewController: UIViewController {
     
     func fetchWeatherListOfParis() {
         weatherViewModel.fetchWeatherInfos(Constants.weatherURL) { (weatherReports, error) in
-            self.weatherReport = weatherReports
+            guard let reports = weatherReports else { return }
+            self.weatherReport = reports
             DispatchQueue.main.async {
                 self.weatherListTableView.reloadData()
                 self.todayTempertureLabel.text = self.weatherReport.first?.temperature
@@ -60,7 +61,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weatherReport.count
+        return weatherReport.count 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
